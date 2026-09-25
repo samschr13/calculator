@@ -1,14 +1,10 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { add, divide, multiply, subtract } from '../src/calculator.js';
+const assert = require('assert');
+const { add, divide, multiply, subtract } = require('../src/calculator');
 
-test('performs basic calculations', () => {
-  assert.equal(add(2, 3), 5);
-  assert.equal(subtract(5, 3), 2);
-  assert.equal(multiply(2, 3), 6);
-  assert.equal(divide(6, 3), 2);
-});
+assert.strictEqual(add(2, 3), 5);
+assert.strictEqual(subtract(5, 3), 2);
+assert.strictEqual(multiply(2, 3), 6);
+assert.strictEqual(divide(6, 3), 2);
 
-test('rejects division by zero', () => {
-  assert.throws(() => divide(1, 0), /Cannot divide by zero/);
-});
+assert.throws(() => divide(1, 0), /Cannot divide by zero/);
+console.log('Tests passed');
